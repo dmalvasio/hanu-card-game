@@ -1,5 +1,36 @@
 .container {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    margin-top: 200px;
+    padding-top: 150px;
+}
+
+.rail-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.deck-container {
+    display: flex;
+    margin-top: 20px;
+}
+
+.reset-button {
+    margin: 4px;
+    cursor: pointer;
+}
+
+.button-container {
+    display: flex;
+    width: 100px;
+    padding-right: 6px;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+
+.reset-image {
+    padding: 6px;
+    width: 20px;
 }
