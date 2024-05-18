@@ -1,0 +1,7 @@
+.deck {
+    height: 100px;
+    width: 100px;
+    background-color: grey;
+    padding: 4px;
+    margin: 5px
+}
