@@ -1,7 +1,46 @@
 .deck {
-    height: 278px;
-    width: 200px;
-    background-color: grey;
-    padding: 4px;
-    margin: 4px
+  position: relative;
+  height: 278px;
+  width: 200px;
+  background-image: linear-gradient(to bottom, #888888, #cccccc);
+  border-radius: 16px;
+  border: 1px dashed #444444;
+  padding: 4px;
+  margin: 20px 15px;
+}
+
+.card-container {
+  position: relative;
+  z-index: 10;
+}
+
+.outlines-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.card-outline {
+  position: absolute;
+  height: 278px;
+  width: 200px;
+  border: 1px solid #9c9c9c;
+  border-radius: 16px;
+  background-color: #000000;
+}
+
+.card-container.moving {
+  transition: transform 0.5s ease;
+  animation: moveCard 1s ease forwards;
+
+}
+
+@keyframes moveCard {
+  0% {
+    transform: translateY(0px);
+  }
+
+  100% {
+    transform: translateY(-100px);
+  }
 }
