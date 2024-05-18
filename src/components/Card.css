@@ -1,4 +1,43 @@
 .card {
     background-color: white;
-    margin-bottom: 5px
+    cursor: pointer;
+    margin-bottom: 5px;
+    width: 200px;
+    height: 278px;
+    border: 1px solid black;
+    border-radius: 16px;
+}
+
+.top-corner {
+    display: flex;
+    align-items: flex-start;
+}
+
+.bottom-corner {
+    display: flex;
+    align-items: flex-start;
+    transform: rotate(180deg)
+}
+
+.corner-image {
+    width: 30px;
+}
+
+.center-image {
+    width: 100px;
+    padding: 12px 0;
+}
+
+.center {
+    text-align: center;
+}
+
+.red-suit {
+    color: red;
+    font-size: 30px;
+}
+
+.black-suit {
+    color: black;
+    font-size: 30px;
 }
