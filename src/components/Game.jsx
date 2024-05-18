@@ -1,10 +1,7 @@
 import { useEffect, useState } from 'react';
 import Deck from './Deck';
 import resetImg from '../assets/reset-arrow.png'
-import letterAImg from '../assets/letter-a-circle.png'
-import number2Img from '../assets/number-2.png'
-import number3Img from '../assets/number-3.png'
-import number4Img from '../assets/number-4.png'
+import Confetti from 'react-confetti'
 import './Game.css';
 
 const initialDeck = [
@@ -13,18 +10,18 @@ const initialDeck = [
     { suit: 'diamonds', value: '3' }, { suit: 'diamonds', value: '4' }, { suit: 'diamonds', value: '2' }, { suit: 'diamonds', value: 'A' }
 ];
 
-const icons = { letterAImg, number2Img, number3Img, number4Img }
-
 const shuffleDeck = (deck) => deck.sort(() => Math.random() - 0.5);
 
 const getRandomValue = () => {
-    const values = ['letterAImg', 'number2Img', 'number3Img', 'number4Img'];
+    const values = ['A', '2', '3', '4'];
     const randomNumber = Math.floor(Math.random() * values.length)
     return values[randomNumber]
 }
 
 const Game = () => {
     const [randomValue, setRandomValue] = useState('');
+    const [winningMessage, setWinningMessage] = useState('');
+    const [isWin, setIsWin] = useState(false);
     const [leftDeck, setLeftDeck] = useState(shuffleDeck([...initialDeck]));
     const [middleDeck, setMiddleDeck] = useState([]);
     const [rightDeck, setRightDeck] = useState([]);
@@ -38,21 +35,43 @@ const Game = () => {
 
     const handleResetGame = () => {
         setRandomValue(getRandomValue());
+        setWinningMessage('');
+        setIsWin(false);
         setLeftDeck(shuffleDeck([...initialDeck]));
         setMiddleDeck([]);
         setRightDeck([]);
     };
 
+    const handleWinningGame = () => {
+        if (
+            leftDeck.length > 0 &&
+            middleDeck.length > 0 &&
+            rightDeck.length > 0 &&
+            leftDeck[0].value === randomValue &&
+            middleDeck[0].value === randomValue &&
+            rightDeck[0].value === randomValue
+        ) {
+            setWinningMessage('¡¡¡ FELICIDADES, HAS GANADO !!!')
+            setIsWin(true);
+        }
+    }
+
     useEffect(() => {
         handleResetGame();
     }, []);
 
+    useEffect(() => {
+        handleWinningGame();
+    }, [leftDeck, middleDeck, rightDeck])
+
     return (
         <div className='container'>
+            {isWin && <Confetti />}
+            {winningMessage && <div className='win-message'><h2>{winningMessage}</h2></div>}
             <div>
                 <div className='rail-container'>
                     <div className='value-container'>
-                        Valor a ordenar: <img className='value-image' src={icons[randomValue]}></img>
+                        Valor a ordenar: <span className='random-value'>{randomValue}</span>
                     </div>
                     <button onClick={handleResetGame} className='reset-button'>
                         <div className='button-container'>
