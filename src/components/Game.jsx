@@ -47,7 +47,7 @@ const Game = () => {
                 <div className='deck-container'>
                     <Deck cards={leftDeck} onCardClick={() => handleMoveCard(leftDeck, setLeftDeck, middleDeck, setMiddleDeck)} />
                     <Deck cards={middleDeck} onCardClick={() => handleMoveCard(middleDeck, setMiddleDeck, rightDeck, setRightDeck)} />
-                    <Deck cards={rightDeck} />
+                    <Deck cards={rightDeck} onCardClick={() => handleMoveCard(rightDeck, setRightDeck, leftDeck, setLeftDeck)} />
                 </div>
             </div>
         </div>
