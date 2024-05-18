@@ -8,7 +8,7 @@
 
 .rail-container {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
 
 .deck-container {
@@ -28,6 +28,17 @@
     justify-content: space-between;
     align-items: center;
     font-weight: bold;
+}
+
+.value-container {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+}
+
+.value-image {
+    padding: 6px;
+    width: 40px;
 }
 
 .reset-image {
