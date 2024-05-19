@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 import Card from './Card';
 import './Deck.css';
@@ -54,6 +55,16 @@ const Deck = ({ cards, onCardClick }) => {
       </div>
     </div>
   );
+};
+
+Deck.propTypes = {
+  cards: PropTypes.arrayOf(
+    PropTypes.shape({
+      suit: PropTypes.string.isRequired,
+      value: PropTypes.string.isRequired,
+    })
+  ),
+  onCardClick: PropTypes.func.isRequired,
 };
 
 export default Deck;

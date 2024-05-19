@@ -6,9 +6,9 @@ import resetImg from '../assets/reset-arrow.png'
 import './Game.css';
 
 const initialDeck = [
-  { suit: 'hearts', value: 'A' }, { suit: 'hearts', value: '3' }, { suit: 'hearts', value: '4' }, { suit: 'hearts', value: '2' },
-  { suit: 'spades', value: '2' }, { suit: 'spades', value: 'A' }, { suit: 'spades', value: '3' }, { suit: 'spades', value: '4' },
-  { suit: 'diamonds', value: '3' }, { suit: 'diamonds', value: '4' }, { suit: 'diamonds', value: '2' }, { suit: 'diamonds', value: 'A' }
+  { suit: 'hearts', value: 'A' }, { suit: 'hearts', value: '2' }, { suit: 'hearts', value: '3' }, { suit: 'hearts', value: '4' },
+  { suit: 'spades', value: 'A' }, { suit: 'spades', value: '2' }, { suit: 'spades', value: '3' }, { suit: 'spades', value: '4' },
+  { suit: 'diamonds', value: 'A' }, { suit: 'diamonds', value: '2' }, { suit: 'diamonds', value: '3' }, { suit: 'diamonds', value: '4' }
 ];
 
 const shuffleDeck = (deck) => deck.sort(() => Math.random() - 0.5);
@@ -71,8 +71,9 @@ const Game = () => {
         {winningMessage &&
           <div className='win-message'>
             {winningMessage}
-          </div>}
-        <div>
+          </div>
+        }
+        <div className='table'>
           <div className='actions-container'>
             <div className='value-container'>
               Valor a ordenar: <span className='random-value'>{randomValue}</span>
