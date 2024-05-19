@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 250px;
+  padding-top: 170px;
 }
 
 .confetti-container {
@@ -13,16 +13,24 @@
 .win-message {
   position: fixed;
   background-color: #b0ffa2;
+  font-family: Papyrus, fantasy;
   border-radius: 10px;
   box-shadow: 0 4px 6px #00000060;
   padding: 10px 20px;
   margin: 20px auto;
-  font-family: Papyrus, fantasy;
   z-index: 9990;
-  top: 40px;
+  top: 30px;
   font-size: 30px;
   font-weight: normal;
   color: #151515;
+}
+
+.table {
+  background-image: url(../assets/bg.jpg);
+  background-size: 40%;
+  border-radius: 30px;
+  border: 10px solid #848484;
+  padding: 60px;
 }
 
 .actions-container {
@@ -60,6 +68,7 @@
   display: flex;
   align-items: center;
   font-size: 24px;
+  color: #ffffff;
 }
 
 .random-value {
@@ -73,7 +82,7 @@
   border: 2px solid #000000;
   border-radius: 50%;
   font-size: 30px;
-  font-weight: bold;
+  color: #000000;
 }
 
 .reset-image {
